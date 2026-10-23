@@ -7,6 +7,7 @@ let accountState;
 //accountId = 4 // not allowed 
 accountEmail = "vispan.com"
 accountPassword = "1106"
+accountState = "California"
 console.log(accountId);
 console.table([accountId, accountEmail, accountPassword,accountState]);
 
