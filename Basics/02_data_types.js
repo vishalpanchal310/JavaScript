@@ -9,7 +9,8 @@ let isLoggedIn = false;
 let state = null;
 
 //  Data types in JS
-// number => range 2 to oower 23
+// number => range 2 to Power 23
+// bigint => range 2 to Power 53
 // string => " "
 // Bollean => true/false
 // null => empty value
