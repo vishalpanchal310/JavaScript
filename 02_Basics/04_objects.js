@@ -70,7 +70,7 @@ navbar((company = "vishal"));
 
 // JSON:JavaScript Object Notation
 //It is the standard for data exchange in modern APIs, web applications, and cloud systems
-
+//JS sends a request to an API
 /*
 {
   "name":"vishal",
