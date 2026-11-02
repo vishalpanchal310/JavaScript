@@ -1,3 +1,6 @@
+//iterations (loops) are used to repeat a block of code multiple times.
+//There are different types of loops in JavaScript, including while loops, do-while loops, and for loops.
+
 //for loop: used to repeat a block of code a certain number of times
 //syntax:
 // for (initialization; condition; increment/decrement) {
