@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM IN JS</title>
+  </head>
+
+  <body
+    style="
+      background-color: black;
+      color: azure;
+      /* border: 2px solid white; */
+      padding: 20px;
+    "
+  >
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+  </body>
+  <script>
+    const parent = document.querySelector(".parent");
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[1].innerHTML);
+
+    /*for (let i = 1; i < parent.children.length; i++) {
+      console.log(parent.children[i].innerHTML);
+    }
+   // output:
+    // Tuesday
+    // Wednesday
+    // Thursday
+    */
+    //parent.children[1].style.color = "red";
+    //console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector(".day");
+    // console.log(dayOne);
+    // console.log(parent.children[1]);
+    // console.log(dayOne.nextElementSibling);
+    // console.log(dayOne.previousElementSibling);
+
+    console.log("NODES:", parent.childNodes);
+    //Output: It makes a NodeList of all the child nodes of the parent element, including text nodes (like whitespace) and element nodes (like divs). The output will look like this:
+    // NODES: NodeList(9)
+    // 0: text
+    // 1: div.day
+    // 2: text
+    // 3: div.day
+    // 4: text
+    // 5: div.day
+    // 6: text
+    // 7: div.day
+    // 8: text
+    // length: 9
+    // [[Prototype]]: NodeList
+  </script>
+</html>
