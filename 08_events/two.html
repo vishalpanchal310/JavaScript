@@ -1,0 +1,33 @@
+<!-- Asynchronous JavaScript is a programming paradigm that allows long-running tasks, such as network requests or timers,
+to execute in the background without blocking the main thread. 
+This non-blocking behavior ensures that web applications remain responsive to user input while waiting for operations to complete.
+
+Common asynchronous APIs include fetch() for HTTP requests, setTimeout() for delays,
+and Web APIs for browser-specific tasks like file I/O or database queries. -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Chai aur code</h1>
+    <button
+      style="background-color: rgb(195, 95, 195); color: aliceblue"
+      ;
+      id="stop"
+    >
+      Stop
+    </button>
+  </body>
+  <script>
+    setTimeout(function () {
+      console.log("vishal");
+    }, 2000); //TimeOut Function
+
+    document.querySelector("h1").innerHTML = "Best JS Series";
+    // change <h1> value
+  </script>
+</html>
