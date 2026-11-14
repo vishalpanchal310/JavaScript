@@ -1,0 +1,191 @@
+<!-- XMLHttpRequest (XHR) is a JavaScript API used to interact with servers, enabling asynchronous data exchange (AJAX) without reloading the entire web page.
+ It supports GET and POST methods to request or send data in formats like XML, JSON, HTML, or plain text.  -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #150410; color: azure">
+    0 UNSENT Client has been created. open() not called yet. 1 OPENED open() has
+    been called. 2 HEADERS_RECEIVED send() has been called, and headers and
+    status are available. 3 LOADING Downloading; responseText holds partial
+    data. 4 DONE The operation is complete.
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    console.log("HERE");
+    // console.log(xhr.readyState);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        // .parse converts string into JSON
+        console.log(typeof data);
+        console.log(data.followers);
+      }
+    };
+
+    xhr.send();
+  </script>
+</html>
+
+// Extra work
+
+<!-- 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile Card</title>
+
+    <style>
+      body {
+        background-color: #150410;
+        color: azure;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      button {
+        background-color: rgb(195, 95, 195);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: purple;
+      }
+
+      .card {
+        display: none;
+        background-color: #2b1429;
+        width: 280px;
+        padding: 25px;
+        margin-top: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+      }
+
+      .card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid rgb(195, 95, 195);
+        object-fit: cover;
+      }
+
+      .card h2 {
+        margin-bottom: 8px;
+      }
+
+      .card p {
+        color: #d8b9d8;
+      }
+
+      .followers {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      .followers h3 {
+        color: rgb(220, 130, 220);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>GitHub Profile Card</h1>
+
+      <button id="button">Show Profile</button>
+
+      <div class="card" id="profile">
+        <img id="profilePic" src="" alt="Profile Picture" />
+
+        <h2 id="name"></h2>
+
+        <p id="username"></p>
+
+        <div class="followers">
+          <div>
+            <h3 id="followers">0</h3>
+            <p>Followers</p>
+          </div>
+
+          <div>
+            <h3 id="following">0</h3>
+            <p>Following</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+
+      const button = document.querySelector("#button");
+
+      button.addEventListener("click", function () {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("GET", requestUrl);
+
+        xhr.onreadystatechange = function () {
+          console.log(xhr.readyState);
+
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              const data = JSON.parse(this.responseText);
+
+              console.log(data);
+
+              // Display profile picture
+              document.querySelector("#profilePic").src = data.avatar_url;
+
+              // Display name
+              document.querySelector("#name").innerHTML = data.name;
+
+              // Display username
+              document.querySelector("#username").innerHTML = "@" + data.login;
+
+              // Display followers
+              document.querySelector("#followers").innerHTML = data.followers;
+
+              // Display following
+              document.querySelector("#following").innerHTML = data.following;
+
+              // Show profile card
+              document.querySelector("#profile").style.display = "block";
+
+              // Change button text
+              button.innerHTML = "Profile Loaded";
+            } else {
+              console.log("Error fetching profile");
+            }
+          }
+        };
+
+        xhr.send();
+      });
+    </script>
+  </body>
+</html> -->
